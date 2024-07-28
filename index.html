@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entering of Sale and Issuance of Letters Patent</title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    
+    <!-- 
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script> -->
+    <script defer src="script.js"></script>
+   
+    </script>
+   
+  </head>
+  <body>
+    <section class="question">
+      <h1 style="display: grid; place-items: center;">Entering of Sale and Issuance of Letters Patent</h1>
+      <div class="instructions">
+        <div class="instructions-text">Instructions</div>
+      </div>
+      <p>
+        Included in this package are the requisitions that may be required to
+        prepare for issuing letters patent.<b
+          >Section A is mandatory to issue a letters patent.
+        </b>
+      </p>
+      <main>
+        <h3>
+          Answer the following questions to determine which additional Sections
+          need to be completed.
+        </h3>
+        <div >
+        <div class="instruction">
+          
+        </div>
+        <ol>
+
+          <li>
+            <div class="label-with-icon">
+
+                <div>Is the applicant currently under another form of tenure that requires cancellation? </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                    if No, complete section A <br/>
+                    if Yes, complete section A and B
+                  </div>
+                </div>
+              </div>
+            <div class="radio-group">
+              <input type="radio" name="tenure" id="tenure-yes" />
+              <label for="tenure-yes">Yes</label>
+              <input type="radio" name="tenure" id="tenure-no" />
+              <label for="tenure-no">No</label>
+            </div>
+          </li>
+          <li>
+            Is the sale associated with an easement accross the parcel that's being sold ?
+            <div class="radio-group">
+              <input type="radio" name="parcel" id="parcel-yes" />
+              <label for="parcel">Yes</label>
+              <input type="radio" name="parcel" id="parcel-no" />
+              <label for="parcel-no">No</label>
+            </div>
+          </li>
+          <li>
+            <div class="label-with-icon">
+
+                <div>Is the sale for a crown shore reserve or road allowance? </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                    if No, complete section A <br/>
+                    if Yes, if Yes, is it within municipality?
+                  </div>
+                </div>
+              </div>
+
+
+<!--               <div class="label-with-icon"> <div>Is it within a municipality?</div><div class="info-wrapper"><div id="info">i</div><div class="hide">if No, complete section A <br/>if Yes, complete section A and C</div> </div> </div> </div><div class="radio-group"> <input type="radio" name="municipality" id="municipality-yes" /><label for="municipality-yes">Yes</label><input type="radio" name="municipality" id="municipality-no" /> <label for="municipality-no">No</label> </div>
+ -->
+
+
+
+
+            <div class="radio-group">
+              <input type="radio" name="sale" id="sale-yes" />
+              <label for="sale-yes">Yes</label>
+              <input type="radio" name="sale" id="sale-no" />
+              <label for="sale-no">No</label>
+            </div>
+          </li>
+          <li id="municipality" style="display: none;">
+            <div class="label-with-icon"> <div>Is it within a municipality?</div><div class="info-wrapper"><div id="info">i</div><div class="hide">if No, complete section A <br/>if Yes, complete section A and C</div> </div> </div> </div>
+            <!-- Munici-pality here -->
+          </li>
+        </ol>
+      </div>
+      </main>
+    </section>
+
+ 
+
+<section class="doc">
+  <h3>
+    Section A: Requisition for Sale and Issuance of Letters Patent
+    (required)
+  </h3>
+
+  <p>
+    Required Supporting Documents
+  </p>
+  <ul>
+    <li>
+      Survey plan
+    </li>
+    <li>
+      Legal Description
+    </li>
+    <li>
+      Market Value/Admin Fee
+    </li>
+    <li>
+      Legal Name(s) of the patentees
+    </li>
+    <li>
+      Corporate Profile Report/Extra Provincial Licence as needed if sale is to a corporation
+    </li>
+    <li>
+      P.I.N Printout of adjacent private  property or P.I.N of leasehold parcel if enlarging to sale and patient
+    </li>
+    <li>
+      A copy of legal approval is also required if sale is to Quit claim
+    </li>
+  </ul>
+
+</section>
+
+<section id="section-b" class="doc">
+
+</section>
+
+<section id="section-c" class="doc">
+ 
+</section>
+
+
+ 
+    </section>
+    <section>
+      <h3>
+        Section A: Requisition for Sale and Issuance of Letters Patent
+        (required)
+      </h3>
+      <form id="form">
+       <div>
+        <div class="form-group">
+            <label for="requisition">
+              <div class="label-with-icon">
+
+                <div>
+                  
+                  Requisition
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                   Select proper statutory from the prepopulated drop-down
+                  </div>
+                </div>
+              </div>
+
+            </label>
+            <select id="requisition">
+              <option value="Section 15 PLA(Regulated sale)">
+                Section 15 PLA(Regulated sale)
+              </option>
+              <option value="Section 16 PLA(sale)">Section 16 PLA (Sale)</option>
+              <option value="Section 16 PLA (Sale includes road allowance)">
+                Section 16 PLA (Sale includes road allowance)
+              </option>
+              <option
+                value="Section 16 PLA(Cancellation of Lease/License and Entering Sale, Issuance of Letters)"
+              >
+                Section 16 PLA(Cancellation of Lease/License and Entering Sale,
+                Issuance of Letters)
+              </option>
+              <option value="Section 17 PLA - Quit Claim">
+                Section 17 PLA - Quit Claim
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="legal-names">
+              
+              <div class="label-with-icon">
+                
+                <div>
+                  
+                  Legal Name(s):
+              
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                    Individuals: Enter the full legal name of the applicant(s); no initials or short forms. 
+                    Corporations: Enter name as it appears on the Corporation Profile Report. 
+                  
+                  </div>
+                </div>
+              </div>
+            </label>
+         
+            <input  type="text" id="legal-names"/>
+          </div>
+          <div class="form-group">
+            <label for="operating-names">
+              <div class="label-with-icon">
+                
+                <div>
+                  Operating Name(s):
+                  
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                    Business name other than the legal registered name.
+                  </div>
+                </div>
+              </div>
+            </label>
+            <input type="text" id="operating-names" />
+          </div>
+          <div class="form-group">
+            <label >Address:</label>
+            </div>
+          <div class="grid col-2 gap">
+            <div class="form-group">
+              <label for="address">Street:</label>
+              <input type="text" id="street" />
+            </div>
+            <div class="form-group">
+              <label for="city">City:</label>
+              <input type="text" id="city" />
+            </div>
+            <div class="form-group">
+              <label for="province">Province:</label>
+              <input type="text" id="province" />
+            </div>
+            <div class="form-group">
+              <label for="postal-code">Postal Code:</label>
+              <input type="text" id="postal-code" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="jurisdiction">
+              
+              <div class="label-with-icon">
+                
+                <div>
+                  Jurisdiction of Incorporation:
+                
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                    A Corporation Profile Report issued by the jurisdiction of incorporation and no older than 6 months must be provided. An Extra-Provincial Licence to operate in Ontario must be included if the jurisdiction is outside of Canada. If not applicable, enter â€œN/Aâ€.
+
+                  </div>
+                </div>
+              </div>
+              
+            </label>
+            <input type="text" id="jurisdiction" />
+          </div>
+          <div class="line"></div>
+          <div class="form-group form-flex" >   
+            
+            <div class="form-group form-flex">
+            <label for="tenancy">
+              
+              <div class="label-with-icon">
+                
+                <div>
+                  Tenancy:
+                
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                    When the parcel of land/water is related to an adjacent property, then the title holder name(s) must mirror the title holders on the adjacent PIN. When the parcel of land/water is surrounded by CROWN, often there is no PIN, then obtain direction from the client as to how they wish to hold title.
+
+                  </div>
+                </div>
+              </div>
+            </label>
+            <select id="tenancy">
+        <option  value="" selected ></option>
+              <option value="Joint Tenants">Joint Tenants</option>
+              <option value="Tenants in Common">Tenants in Common</option>
+            </select>
+          </div>
+        
+               
+          <div class="form-group form-flex">
+           <div class="flex"> <input type="checkbox" id="other-tenancy" />
+            <label for="other-tenancy">Other:</label>
+            <input type="text" id="other-tenancy-text" />
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="form-flex">
+          <div class="form-group">
+            <label for="sale-price">
+              <div class="label-with-icon">
+                
+                <div>
+                  Sale Price:
+                  
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                    market value (mv) (not including the HST) if lower than mv the current administrative fee must be populated by district as per PL.6.02.01 Administrative Fees for public land transactions
+                  </div>
+                </div>
+              </div>
+            </label>
+            <input type="number" step="any" id="sale-price" />
+          </div>
+          <div class="form-group">
+            <label for="hst-collected">
+              <div class="label-with-icon">
+                
+                <div>
+                  Was HST Collected:
+                
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                    Was HST collected, select YES / NO, if Yes, input the amount of HST collected in this field
+                  
+
+                  </div>
+                </div>
+              </div>
+
+            </label>
+            <select id="hst-collected">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="hst">HST:</label>
+            <input type="number" id="hst" placeholder="$ 0.00" step="any"  />
+          </div>
+      </div>
+  
+          <div class="line"></div>
+          <div class="form-group ">
+            <div class="label-with-icon">
+
+              <div>
+                Quit Claim: Section 17 PLA - If applicable, complete A,B & C.
+              </div>
+              
+              <div class="info-wrapper">
+
+                <div id="info">i</div>
+                <div class="hide">
+                Value based on benchmarks or zonal reports.
+                </div>
+              </div>
+            </div>
+           
+            <div class="form-flex">
+                <div>
+  
+                    <label for="patent-fee">
+                      <div class="label-with-icon">
+                        
+                        <div>
+                          A. Patent Fee:
+                          
+                        </div>
+                        
+                        <div class="info-wrapper">
+        
+                          <div id="info">i</div>
+                          <div class="hide">
+                            populated by district as per PL.6.02.01 Administrative Fees for public land
+                            transactions
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                    <input type="number" step="any" id="patent-fee" />
+                  </div>
+                <div >
+                <label for="market-value"
+                >
+                <div class="label-with-icon">
+                  
+                  <div>
+                    
+                    B. Estimated Market Value of Subject property:
+                  </div>
+                  
+                  <div class="info-wrapper">
+  
+                    <div id="info">i</div>
+                    <div class="hide">
+                      populated by district staff
+                    </div>
+                  </div>
+                </div>
+                </label
+                >
+                <input type="number" id="market-value" step="any" />
+              </div>
+              </div>
+  
+          </div>
+          <div class="line"></div>
+          <div class="form-group">
+            <div>
+              Sale with Conditions: Section 15 PLA - If applicable, complete A &
+              B.
+            </div>
+            <label for="sale-conditions">
+              
+              <div class="label-with-icon">
+                
+                <div>
+                  A. Conditions of Sale:
+               
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                 
+                     district staff to enter the conditions that must be satisfied before approval will be granted to issue Letters Patent
+
+
+                  </div>
+                </div>
+              </div>
+            </label>
+            <input type="text" id="sale-conditions" />
+            <div class="form-flex" style="justify-content: normal;">
+  
+                
+                <label for="conditions-date"
+                >B. Date by which conditions must be satisfied (MM/DD/YYYY) :</label
+                >
+                <input type="text"  id="conditions-date"  />
+              </div>
+          </div>
+      <div class="form-flex">
+        <div class="form-group form-basis" style="align-self: flex-start;">
+          <label for="purpose">
+            <div class="label-with-icon">
+              
+              <div>
+                Purpose:
+                
+              </div>
+              
+              <div class="info-wrapper">
+
+                <div id="info">i</div>
+                <div class="hide">
+                    Short description ex. Crown shore reserve, lot addition, telecom line, cottage, marina, private recreation camp, road allowance, etc.                </div>
+              </div>
+            </div>
+          </label>
+          <textarea id="purpose" rows="6">
+
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label>
+            <div class="label-with-icon">
+              
+              <div>
+                Legal Description:
+              </div>
+              
+              <div class="info-wrapper">
+
+                <div id="info">i</div>
+                <div class="hide">
+                  populated by district staff
+                </div>
+              </div>
+            </div>
+          </label>
+          <div>
+
+            <label for="legal-description">Crown location/Mining Location number Description:</label>
+            <input type="text"  id="crown-location"/>
+          </div>
+          <div>
+
+            <label for="legal-description">Parts:</label>
+            <input type="text" id="parts" />
+          </div>
+          <div>
+
+            <label for="legal-description">Reference plan number:</label>
+            <input type="text" id="deposited" />
+          </div>
+        
+        </div>
+      </div>
+          <div class="form-group checkbox-group">
+            <div class="form-flex">
+              <input type="radio" id="standard" name="specific-and-standard"  />
+
+           
+            <label for="standard" style="margin-bottom: 0;">Standard</label>
+            </div>
+            <div class="form-flex">
+          
+              <input type="radio" id="specific-reservations" name="specific-and-standard"/>
+           
+         
+            <label for="specific-reservations" id="specific-reservations-label" style="margin-bottom: 0;">Specific Reservations
+            </label>
+             
+          </div>
+          
+          
+        </div>
+        <div id="specific-reservations-list">
+         
+        
+        
+        </div>
+        <div>
+        
+          <div class="flex" style="align-items: center;">
+            <div class="checkmark-container">
+                <input type="checkbox" id="Flooding-clause" />
+                <span class="checkmark"></span>
+            </div>
+            <label for="Flooding-clause">Flooding clause</label>
+        </div>
+ 
+          <div id="flooding-div">
+          
+          </div>
+          <div class="line"></div>
+        <span id="subject-of-easement"></span>
+          <div class="form-group">
+              <h3><i>Crown Land Registry Use Only:</i></h3>
+              <div class="bg grid col-2 gap">
+            <div class=""><label for="document-reference-1">Parent Document Reference No:</label>
+            <input type="text" id="document-reference-1" />
+            </div>
+            <div class=""><label for="date-1">Date (MM/DD/YYYY) :</label>
+            <input type="text"  id="date-1" />
+            </div>
+            <div class=""><label for="document-reference-2">Child 1 Document Reference No:</label>
+            <input type="text" id="document-reference-2" />
+            </div>
+            <div class=""><label for="date-2">Date (MM/DD/YYYY) :</label>
+            <input type="text"  id="date-2" />
+            </div>
+            <div class=""><label for="document-reference-3">Child 2 Document Reference No:</label>
+            <input type="text" id="document-reference-3" />
+            </div>
+            <div class=""><label for="date-3">Date (MM/DD/YYYY) :</label>
+            <input type="text"  id="date-3" />
+            </div>
+            <div class=""><label for="land-file-number">Land File Number:</label>
+            <input type="text" id="land-file-number" />
+            </div>
+          </div>
+          </div>
+       </div>
+       <div id="form-sectionB"></div>
+       <div id="form-sectionC"></div>
+
+       
+       <div class="btns">
+
+         <button id="reset" type="reset">Reset</button>
+        <div class="left">
+          <button type="button" id="print">Print</button>
+
+          
+         <button type="submit" class="submit">Download</button>
+        </div>
+      </div>
+      </form>
+    </section>
+
+    <!-- Continue with additional sections based on the new image -->
+
+     
+
+ 
+  </body>
+</html>
