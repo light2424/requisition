@@ -83,7 +83,7 @@
                   <div id="info">i</div>
                   <div class="hide">
                     if No, complete section A <br/>
-                    if Yes, is it within municipality?
+                    if Yes, if Yes, is it within municipality?
                   </div>
                 </div>
               </div>
@@ -179,19 +179,22 @@
 
                   <div id="info">i</div>
                   <div class="hide">
-                    REQUISITION TO REQUEST A MINISTER'S ORDER TO STOP UP A ROAD THAT IS NOT WITHIN A MUNICIPALITY AND FOR ENTERING OF SALE AND ISSUANCE OF LETTERS. Sections 55.1 (1) and 55.1 (3) Public Lands Act, R.S.O. 1990, as amended
-                  </div>
+                    Select the Correct Section for PLA
+                 </div>
                 </div>
               </div>
 
             </label>
             <select id="requisition">
+              <option value="">
+                
+              </option>
               <option value="Section 15 PLA(Regulated sale)">
                 Section 15 PLA(Regulated sale)
               </option>
               <option value="Section 16 PLA(sale)">Section 16 PLA (Sale)</option>
-              <option value="Section 16 PLA (Sale includes road allowance)">
-                Section 16 PLA (Sale includes road allowance)
+              <option value="Sections 55.1 (1) and 55.1 (3) PLA, R.S.O. 1990, as amended(Sale includes road allowance)">
+                Sections 55.1 (1) and 55.1 (3) PLA, R.S.O. 1990, as amended(Sale includes road allowance)
               </option>
               <option
                 value="Section 16 PLA(Cancellation of Lease/License and Entering Sale, Issuance of Letters)"
@@ -351,7 +354,8 @@
                 </div>
               </div>
             </label>
-            <input type="number" step="any" id="sale-price" />
+            <!-- <input type="text" step="any" id="sale-price" /> -->
+            <input type="number" id="sale-price" placeholder="$ 0.00" step="any"  />
           </div>
           <div class="form-group">
             <label for="hst-collected">
@@ -531,7 +535,7 @@
           </label>
           <div>
 
-            <label for="legal-description">Crown location/Mining Location number Description:</label>
+            <label for="legal-description">Crown location/Mining Location:</label>
             <input type="text"  id="crown-location"/>
           </div>
           <div>
@@ -625,15 +629,23 @@
 
           
          <!-- <button type="submit" class="submit">Download</button> -->
+         <div class="label-with-icon">
+         <div class="info-wrapper">
+
+          <div id="info">i</div>
+          <div class="hide">
+            Save PDF document in Legal size format at 85% only from page 2 to 5
+          </div>
+        </div>
+        </div>
+
         </div>
       </div>
       </form>
     </section>
 
     <!-- Continue with additional sections based on the new image -->
-
-     
-
- 
+  <section>
+  </section>
   </body>
 </html>
