@@ -115,7 +115,7 @@
 
 <section class="doc">
   <h3>
-    Section A: Requisition for Sale and Issuance of Letters Patent
+    Section A: Statutory Authority for Sale and Issuance of Letters Patent
     (required)
   </h3>
 
@@ -349,7 +349,7 @@
 
                   <div id="info">i</div>
                   <div class="hide">
-                    market value (mv) (not including the HST) if lower than mv the current administrative fee must be populated by district as per PL.6.02.01 Administrative Fees for public land transactions
+                    Market Value (MV) ( Not including the HST) if lower than MV the current administrative fee must be populated as per policy PL.6.02.01
                   </div>
                 </div>
               </div>
@@ -366,7 +366,7 @@
                 
                 </div>
                 
-                <div class="info-wrapper">
+                <!-- <div class="info-wrapper">
 
                   <div id="info">i</div>
                   <div class="hide">
@@ -374,7 +374,7 @@
                   
 
                   </div>
-                </div>
+                </div> -->
               </div>
 
             </label>
@@ -384,7 +384,28 @@
             </select>
           </div>
           <div class="form-group">
+
+
+
+            <div class="label-with-icon">
+                
+              <div>  </div>
+
             <label for="hst">HST:</label>
+
+            <div class="info-wrapper">
+
+              <div id="info">i</div>
+              <div class="hide">
+                Was HST collected, select YES/NO, if yes, input the Amount of HST collected in the field.
+              
+
+              </div>
+            </div>
+
+          </div>
+
+
             <input type="text" id="hst" placeholder="$ 0.00" step="any"  />
           </div>
       </div>
@@ -394,16 +415,16 @@
             <div class="label-with-icon">
 
               <div>
-                Quit Claim: Section 17 PLA - If applicable, complete A,B & C.
+                Quit Claim: Section 17 PLA.
               </div>
               
-              <div class="info-wrapper">
+              <!-- <div class="info-wrapper">
 
                 <div id="info">i</div>
                 <div class="hide">
                 Value based on benchmarks or zonal reports.
                 </div>
-              </div>
+              </div> -->
             </div>
            
             <div class="form-flex">
@@ -413,7 +434,7 @@
                       <div class="label-with-icon">
                         
                         <div>
-                          A. Patent Fee:
+                          Administrative fee as per policy PL.6.02.01:
                           
                         </div>
                         
@@ -437,14 +458,14 @@
                   
                   <div>
                     
-                    B. Estimated Market Value of Subject property:
+                    Estimated Market Value of Subject property:
                   </div>
                   
                   <div class="info-wrapper">
   
                     <div id="info">i</div>
                     <div class="hide">
-                      populated by district staff
+                      Value based on Bench marks or zonal reports
                     </div>
                   </div>
                 </div>
@@ -455,7 +476,7 @@
               </div>
   
           </div>
-          <div class="line"></div>
+          <!-- <div class="line"></div> -->
           <div class="form-group">
             <div>
               Sale with Conditions: Section 15 PLA - If applicable, complete A &
@@ -466,7 +487,7 @@
               <div class="label-with-icon">
                 
                 <div>
-                  A. Conditions of Sale:
+                  Sale with Conditions: Section 15 PLA:
                
                 </div>
                 
@@ -484,14 +505,30 @@
             </label>
             <input type="text" id="sale-conditions" />
             <div class="form-flex" style="justify-content: normal;">
-  
+              
+
+
+              <div class="label-with-icon"> 
+                <label for="conditions-date"> Date by which conditions must be satisfied (YEAR/MM/DD) :</label>                 
+                <div>
+                  
+                </div>         
+                <div class="info-wrapper">
+                  <div id="info">i</div>
+                  <div class="hide">
+                    Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.
+                  </div>
+                </div>
+              </div>
+
+
                 
-                <label for="conditions-date">B. Date by which conditions must be satisfied (MM/DD/YYYY) :</label>
+                
                 <input type="text"  id="conditions-date"  />
               </div>
           </div>
 <p>
-  <hr style="width:100%;text-align:left;margin-left:0">
+  <!-- <hr style="width:100%;text-align:left;margin-left:0"> -->
 </p>
 
       <div class="form-flex">
@@ -528,7 +565,7 @@
 
                 <div id="info">i</div>
                 <div class="hide">
-                  populated by district staff
+                  Enter details found from OSG prepared legal description
                 </div>
               </div>
             </div>
@@ -593,32 +630,43 @@
           <div class="form-group">
               <h3><i>Crown Land Registry Use Only:</i></h3>
               <div class="bg grid col-2 gap">
-            <div class=""><label for="document-reference-1">Parent Document Reference No:</label>
+            <div class=""><label for="document-reference-1">Document Reference No:</label>
             <input type="text" id="document-reference-1" />
             </div>
-            <div class=""><label for="date-1">Date (MM/DD/YYYY) :</label>
+            <div class=""><label for="date-1">Date (YEAR/MM/DD) :</label>
             <input type="text"  id="date-1" />
             </div>
-            <div class=""><label for="document-reference-2">Child 1 Document Reference No:</label>
+            <!-- <div class=""><label for="document-reference-2">Child 1 Document Reference No:</label>
             <input type="text" id="document-reference-2" />
             </div>
-            <div class=""><label for="date-2">Date (MM/DD/YYYY) :</label>
+            <div class=""><label for="date-2">Date (YEAR/MM/DD) :</label>
             <input type="text"  id="date-2" />
             </div>
             <div class=""><label for="document-reference-3">Child 2 Document Reference No:</label>
             <input type="text" id="document-reference-3" />
             </div>
-            <div class=""><label for="date-3">Date (MM/DD/YYYY) :</label>
+            <div class=""><label for="date-3">Date (YEAR/MM/DD) :</label>
             <input type="text"  id="date-3" />
-            </div>
+            </div> -->
             <div class=""><label for="land-file-number">Land File Number:</label>
             <input type="text" id="land-file-number" />
             </div>
+            
+
+            <div class=""><label for="sample"></label>  </div>
+
+            
+            <div class=""><label for="date-3">Notes:</label>
+              <textarea id="document-reference-notes"> </textarea>
+            </div>
+
+
           </div>
           </div>
        </div>
        <div id="form-sectionB"></div>
        <div id="form-sectionC"></div>
+       Please review information entered is complete and correct before submitting to Crown Land Registry
 
        
        <div class="btns">
