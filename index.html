@@ -172,14 +172,14 @@
 
                 <div>
                   
-                  Requisition
+                  Statutory Authority
                 </div>
                 
                 <div class="info-wrapper">
 
                   <div id="info">i</div>
                   <div class="hide">
-                    Select the Correct Section for PLA
+                    Market Value (MV) ( Not including the HST) if lower than MV the current administrative fee must be populated as per policy PL.6.02.01
                  </div>
                 </div>
               </div>
@@ -360,13 +360,13 @@
           <div class="form-group">
             <label for="hst-collected">
               <div class="label-with-icon">
-                
+               <!-- 
                 <div>
                   Was HST Collected:
                 
                 </div>
                 
-                <!-- <div class="info-wrapper">
+                 <div class="info-wrapper">
 
                   <div id="info">i</div>
                   <div class="hide">
@@ -378,10 +378,10 @@
               </div>
 
             </label>
-            <select id="hst-collected">
+            <!-- <select id="hst-collected">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-            </select>
+            </select> -->
           </div>
           <div class="form-group">
 
@@ -397,7 +397,7 @@
 
               <div id="info">i</div>
               <div class="hide">
-                Was HST collected, select YES/NO, if yes, input the Amount of HST collected in the field.
+                Was HST collected, if yes, input the Amount of HST collected in the field.
               
 
               </div>
@@ -449,7 +449,7 @@
                         </div>
                       </div>
                     </label>
-                    <input type="number" step="any" id="patent-fee" />
+                    <input type="text" step="any" id="patent-fee" />
                   </div>
                 <div >
                 <label for="market-value"
@@ -465,13 +465,13 @@
   
                     <div id="info">i</div>
                     <div class="hide">
-                      Value based on Bench marks or zonal reports
+                      Value based on benchmarks or zonal reports
                     </div>
                   </div>
                 </div>
                 </label
                 >
-                <input type="number" id="market-value" step="any" />
+                <input type="text" id="market-value" step="any" />
               </div>
               </div>
   
@@ -479,8 +479,7 @@
           <!-- <div class="line"></div> -->
           <div class="form-group">
             <div>
-              Sale with Conditions: Section 15 PLA - If applicable, complete A &
-              B.
+
             </div>
             <label for="sale-conditions">
               
@@ -496,7 +495,7 @@
                   <div id="info">i</div>
                   <div class="hide">
                  
-                     district staff to enter the conditions that must be satisfied before approval will be granted to issue Letters Patent
+                    Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.
 
 
                   </div>
@@ -619,7 +618,9 @@
                 <input type="checkbox" id="Flooding-clause" />
                 <span class="checkmark"></span>
             </div>
+            <p>
             <label for="Flooding-clause">Flooding clause</label>
+          </p>
         </div>
  
           <div id="flooding-div">
@@ -653,11 +654,11 @@
             </div>
             
 
-            <div class=""><label for="sample"></label>  </div>
+            <!-- <div class=""><label for="sample"></label>  </div> -->
 
             
             <div class=""><label for="date-3">Notes:</label>
-              <textarea id="document-reference-notes"> </textarea>
+              <textarea id="document-reference-notes" rows="4"> </textarea>
             </div>
 
 
@@ -666,7 +667,7 @@
        </div>
        <div id="form-sectionB"></div>
        <div id="form-sectionC"></div>
-       Please review information entered is complete and correct before submitting to Crown Land Registry
+       Please review information entered, and ensure it's complete and correct before submitting to Crown Land Registry
 
        
        <div class="btns">
@@ -697,3 +698,87 @@
   </section>
   </body>
 </html>
+
+
+
+
+
+
+
+<!--       <div class="grid col-2">
+        <div class="flex" style="align-items: center;">
+          <div class="checkmark-container">
+          <input type="checkbox" class="reservation-checkbox" id="mine-and-minerals" />
+          <span class="checkmark"></span></div><label for="mine-and-minerals">Mine and Minerals</label>
+        </div>
+
+        <div class="flex" style="align-items: center;">
+          <div class="checkmark-container">
+            <input type="checkbox" class="reservation-checkbox" id="right-to-construct" />
+            <span class="checkmark"></span></div><label for="right-to-construct">Section 65 (Right to Construct)</label>
+          </div>
+        
+        <div class="flex" style="align-items: center;">
+          <div class="checkmark-container">
+            <input type="checkbox" class="reservation-checkbox" id="navigability" />
+            <span class="checkmark"></span></div><label for="navigability">Navigability</label>
+          </div>
+          
+        <div class="flex" style="align-items: center;">
+            <div class="checkmark-container">
+              <input type="checkbox" class="reservation-checkbox" id="refining-clause" />
+              <span class="checkmark"></span></div><label for="refining-clause">Refining Clause (Section 62)</label>
+            </div>
+
+        <div class="flex" style="align-items: center;">
+            <div class="checkmark-container">
+            <input type="checkbox" class="reservation-checkbox" id="access-to-shores" />
+            <span class="checkmark"></span></div><label for="access-to-shores">Access to Shores</label>
+        </div>
+            
+        
+        <div class="flex" style="align-items: center;">
+          <div class="checkmark-container">
+          <input type="checkbox" class="reservation-checkbox" id="all-trees" />
+          <span class="checkmark"></span></div><label for="all-trees">All Trees</label>
+        </div>
+
+
+        <div class="flex" style="align-items: center;">
+          <div class="checkmark-container">
+            <input type="checkbox" class="reservation-checkbox" id="public-and-colonization-of-roads" />
+            <span class="checkmark"></span></div><label for="public-and-colonization-of-roads">Public and Colonization of Roads</label>
+          </div>
+
+          <div class="flex" style="align-items: center;">
+            <div class="checkmark-container">
+            <input type="checkbox" class="reservation-checkbox" id="pine-trees" />
+            <span class="checkmark"></span></div><label for="pine-trees">Pine Trees</label>
+          </div>
+          
+        <div class="flex" style="align-items: center;">
+          <div class="checkmark-container">
+            <input type="checkbox" class="reservation-checkbox" id="roads" />
+            <span class="checkmark"></span></div><label for="roads">10% for Roads</label>
+          </div>
+          
+          <div class="flex" style="align-items: center;">
+            <div class="checkmark-container">
+            <input type="checkbox" class="reservation-checkbox" id="right-of-way" />
+            <span class="checkmark"></span></div><label for="right-of-way">Right of Way for Public</label>
+          </div>
+
+        </div> -->
+
+
+<!-- Mine and minerals 
+Section 65 (Right to Construct)
+Navigability 
+Refining Clause (Section 62)
+Access to shores
+All Trees 
+Public and colonization of Roads
+Pine Trees
+10% for Roads
+Right of way for Public -->
+
