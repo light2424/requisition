@@ -142,6 +142,55 @@ document.getElementById("Flooding-clause").addEventListener("change", (e) => {
 //   else optionsContainer.style.display = "block";
 //   handleSpecificReservationCheckbox();
 // });
+document.getElementById("requisition").addEventListener("change", function (e) {
+  if (e.target.value === "Section 15 PLA(Regulated sale)") {
+    document.getElementById("quit-claim").innerHTML = "";
+    document.getElementById(
+      "special-conditions"
+    ).innerHTML = `  <label for="sale-conditions">    <div class="label-with-icon">                                <div>                  Sale with Conditions: Section 15 PLA:                               </div>                                <div class="info-wrapper">                  <div id="info">i</div>                  <div class="hide">                                     Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.                  </div> </div>`;
+  } else if (e.target.value === "Section 17 PLA - Quit Claim") {
+    document.getElementById("special-conditions").innerHTML = "";
+    document.getElementById(
+      "quit-claim"
+    ).innerHTML = `  <div class="label-with-icon">
+
+              <div>
+                Quit Claim: Section 17 PLA.
+              </div>
+              
+              <!-- <div class="info-wrapper">
+
+                <div id="info">i</div>
+                <div class="hide">
+                Value based on benchmarks or zonal reports.
+                </div>
+              </div> -->
+            </div>
+            <div class="form-flex"><div>   <label for="patent-fee">    <div class="label-with-icon">            <div>        Administrative fee as per policy PL.6.02.01:              </div>            <div class="info-wrapper">                <div id="info">i</div>        <div class="hide">          populated by district as per PL.6.02.01 Administrative Fees for public land          transactions                  </div>      </div>    </div>  </label>                    <input type="text" step="any" id="patent-fee" />                  </div>                <div >                <label for="market-value"                >                <div class="label-with-icon">                                    <div>                                        Estimated Market Value of Subject property:                  </div>                                    <div class="info-wrapper">                      <div id="info">i</div>                    <div class="hide">                      Value based on benchmarks or zonal reports                    </div>                  </div>                </div>                </label                >                <input type="text" id="market-value" step="any" />              </div></div>`;
+  } else {
+    document.getElementById(
+      "quit-claim"
+    ).innerHTML = `  <div class="label-with-icon">
+
+              <div>
+                Quit Claim: Section 17 PLA.
+              </div>
+              
+              <!-- <div class="info-wrapper">
+
+                <div id="info">i</div>
+                <div class="hide">
+                Value based on benchmarks or zonal reports.
+                </div>
+              </div> -->
+            </div>
+            <div class="form-flex"><div>   <label for="patent-fee">    <div class="label-with-icon">            <div>        Administrative fee as per policy PL.6.02.01:              </div>            <div class="info-wrapper">                <div id="info">i</div>        <div class="hide">          populated by district as per PL.6.02.01 Administrative Fees for public land          transactions                  </div>      </div>    </div>  </label>                    <input type="text" step="any" id="patent-fee" />                  </div>                <div >                <label for="market-value"                >                <div class="label-with-icon">                                    <div>                                        Estimated Market Value of Subject property:                  </div>                                    <div class="info-wrapper">                      <div id="info">i</div>                    <div class="hide">                      Value based on benchmarks or zonal reports                    </div>                  </div>                </div>                </label                >                <input type="text" id="market-value" step="any" />              </div></div>`;
+
+    document.getElementById(
+      "special-conditions"
+    ).innerHTML = `  <label for="sale-conditions">    <div class="label-with-icon">                                <div>                  Sale with Conditions: Section 15 PLA:                               </div>                                <div class="info-wrapper">                  <div id="info">i</div>                  <div class="hide">                                     Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.                  </div> </div>`;
+  }
+});
 
 const handleTooltip = function () {
   const allInfos = document.querySelectorAll("#info");
@@ -190,11 +239,8 @@ standard.addEventListener("change", (e) => {
   if (!e.target.checked) {
     document.getElementById("specific-reservations-list").innerHTML =
       '<div class="grid col-2"><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="mine-and-minerals" /><span class="checkmark"></span></div><label for="mine-and-minerals">Mine and Minerals</label></div><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="navigability" /><span class="checkmark"></span></div><label for="navigability">Navigability</label></div><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="access-to-shores" /><span class="checkmark"></span></div><label for="access-to-shores">Access to Shores</label></div><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="public-and-colonization-of-roads" /><span class="checkmark"></span></div><label for="public-and-colonization-of-roads">Public and Colonization of Roads</label></div><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="roads" /><span class="checkmark"></span></div><label for="roads">10% for Roads</label></div><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="right-to-construct" /><span class="checkmark"></span></div><label for="right-to-construct">Section 65 (Right to Construct)</label></div><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="refining-clause" /><span class="checkmark"></span></div><label for="refining-clause">Refining Clause (Section 62)</label></div><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="all-trees" /><span class="checkmark"></span></div><label for="all-trees">All Trees</label></div><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="pine-trees" /><span class="checkmark"></span></div><label for="pine-trees">Pine Trees</label></div><div class="flex" style="align-items: center;"><div class="checkmark-container"><input type="checkbox" class="reservation-checkbox" id="right-of-way" /><span class="checkmark"></span></div><label for="right-of-way">Right of Way for Public</label></div></div>';
-  } 
+  }
   //Access to shores
-
-
-  
   else {
     document.getElementById("specific-reservations-list").innerHTML = "";
   }
@@ -202,8 +248,8 @@ standard.addEventListener("change", (e) => {
 specificReservation.addEventListener("change", (e) => {
   if (e.target.checked) {
     document.getElementById("specific-reservations-list").innerHTML =
-'<div class="grid col-2"> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="mine-and-minerals" /> <span class="checkmark"></span></div><label for="mine-and-minerals">Mine and Minerals</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="right-to-construct" /> <span class="checkmark"></span></div><label for="right-to-construct">Section 65 (Right to Construct)</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="navigability" /> <span class="checkmark"></span></div><label for="navigability">Navigability</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="refining-clause" /> <span class="checkmark"></span></div><label for="refining-clause">Refining Clause (Section 62)</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="access-to-shores" /> <span class="checkmark"></span></div><label for="access-to-shores">Access to Shores</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="all-trees" /> <span class="checkmark"></span></div><label for="all-trees">All Trees</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="public-and-colonization-of-roads" /> <span class="checkmark"></span></div><label for="public-and-colonization-of-roads">Public and Colonization of Roads</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="pine-trees" /> <span class="checkmark"></span></div><label for="pine-trees">Pine Trees</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="roads" /> <span class="checkmark"></span></div><label for="roads">10% for Roads</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="right-of-way" /> <span class="checkmark"></span></div><label for="right-of-way">Right of Way for Public</label> </div> </div>';  
-} else {
+      '<div class="grid col-2"> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="mine-and-minerals" /> <span class="checkmark"></span></div><label for="mine-and-minerals">Mine and Minerals</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="right-to-construct" /> <span class="checkmark"></span></div><label for="right-to-construct">Section 65 (Right to Construct)</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="navigability" /> <span class="checkmark"></span></div><label for="navigability">Navigability</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="refining-clause" /> <span class="checkmark"></span></div><label for="refining-clause">Refining Clause (Section 62)</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="access-to-shores" /> <span class="checkmark"></span></div><label for="access-to-shores">Access to Shores</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="all-trees" /> <span class="checkmark"></span></div><label for="all-trees">All Trees</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="public-and-colonization-of-roads" /> <span class="checkmark"></span></div><label for="public-and-colonization-of-roads">Public and Colonization of Roads</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="pine-trees" /> <span class="checkmark"></span></div><label for="pine-trees">Pine Trees</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="roads" /> <span class="checkmark"></span></div><label for="roads">10% for Roads</label> </div> <div class="flex" style="align-items: center;"> <div class="checkmark-container"> <input type="checkbox" class="reservation-checkbox" id="right-of-way" /> <span class="checkmark"></span></div><label for="right-of-way">Right of Way for Public</label> </div> </div>';
+  } else {
     document.getElementById("specific-reservations-list").innerHTML = "";
   }
 });
@@ -254,7 +300,7 @@ const renderFormSection = function (sectionName) {
       "afterbegin",
       '<h3> Section B: Cancellation of Lease or Licence</h3>   <div class=" grid col-2 gap">       <div class="form-group">           <label for="document-reference-type"> <div class="label-with-icon"><div>Document Reference Type </div><div class="info-wrapper"> <div id="info">i</div><div class="hide">From the dropdown select proper document type          </div> </div></div> </label>           <select id="document-reference-type">     <option value="">  </option>        <option value="Summer Resort Lease (SRL)">Summer Resort Lease (SRL) </option><option value="Crown Lease (CRL)">                   Crown Lease (CRL)               </option>     <option> Licence of Occupation (LO) / Land Licence Agreement (LLA) </option>      </select>       </div>       <div class="form-group">           <label for="document-number"><div class="label-with-icon"><div>Document No </div><div class="info-wrapper"><div id="info">i</div><div class="hide">  Insert the document number</div>  </div></div></label><input type="text" id="document-number" />  </div>   </div>  <div class="line"></div>  <div class="form-flex">      <div class="form-group">     <label for="expiry-date">   <div class="label-with-icon"><div>Expiry Date: (YEAR/MM/DD) </div><div class="info-wrapper">          <div id="info">i</div>          <div class="hide">         Insert an expiry date of the lease that is being cancelled          </div>        </div>      </div>   </label>     <input type="text"  id="expiry-date" />   </div>   <div class="form-group">       <label for="annual-rent">      <div class="label-with-icon">        <div>        Annual Rent                            </div>                <div class="info-wrapper">          <div id="info">i</div>          <div class="hide">Insert the most recent rent amount the lease was paying          </div>        </div>      </div>        </label>       <input type="number" id="annual-rent" step="any" />   </div>   <div class="form-group">       <label for="paid-to">            <div class="label-with-icon"><div>Paid To    </div><div class="info-wrapper">  <div id="info">i</div>  <div class="hide">Insert the month and year of which the lease made the last payment </div></div></div>        </label>       <input type="text" id="paid-to" />   </div>     </div>   <div class="line"></div>   <div class="form-group">     <label for="current-lease-name">        <div class="label-with-icon"><div>          Current Leaseholder    </div><div class="info-wrapper">  <div id="info">i</div><div class="hide">Insert owners name as shown on the leasehold PIN    </div></div></div>        </label>     <textarea type="text" id="current-lease-name" ></textarea>   </div>  <div class="line"></div>   <div class="form-group"><label for="property-description"       >Property Description as found on leasehold P.I.N</label     >     <input type="text" id="property-description" />       </div>      <div class="line"></div><div class="grid col-2 gap">      <div class="form-group">          <label for="leasehold-pin-number">          <div class="label-with-icon"><div>          Leasehold P.I.N No  </div><div class="info-wrapper"><div id="info">i</div>  <div class="hide">If applicable enter subject property identifier number</div></div></div></label>    <input type="number" id="leasehold-pin-number"  step="any"/>  </div>  <div class="form-group">  <label for="unused-funds"><div class="label-with-icon"><div>Disposition of Unused Funds</div><div class="info-wrapper">  <div id="info">i</div>  <div class="hide">If the "enlargement"  is to take place part way through the rental year then an exploration of how "unused" part of the annual  has been addressed must be entered. If the credit towards the purchase price or the refund has been/will be given to client, this must be entered. If no credit has been/will be provided then enter absorb. If the "enlargement" is to coincide with the anniversary date or expiry dat e of the lease, enter "n/a"     </div></div></div>          </label>    <input type="number" id="unused-funds" step="any" />  </div>  </div>  <div class="line"></div>  <h3><i>Crown Land Registry Use Only:</i> </h3>  <div class="bg"> <div class="grid col-2 gap">      <div class="form-group">  <label for="document-general-number">      <div class="label-with-icon">      <div>        Document General Number              </div>   </div></label>  <input type="number" id="document-general-number" step="any" />      </div>      <div class="form-group">     <label for="date-minister-order">  <div class="label-with-icon">  <div>        Date: (YEAR/MM/DD)    </div>  </div></label> <input type="text"  id="date" />      </div>  </div>  <div class="form-group">    <label for="notes">Notes</label><textarea id="notes"></textarea></div></div>'
     );
-    handleTooltip();   //////////////////
+    handleTooltip(); //////////////////
   }
   if (sectionName === "C") {
     formSectionC.style.display = "block";
@@ -262,13 +308,13 @@ const renderFormSection = function (sectionName) {
       "afterbegin",
       '<div class="line"></div> <h3>Section C: Minister’s Order</h3><div>Sections 55.1 (1) and 55.1 (3) Public Lands Act, R.S.O. 1990, as amended </div><div>    <p>Road description to be put in by Crown or Road Allowance laid out        by a Crown Surveyor that <u>that is not within a municipality</u></p>        <div class="form-group">        <label for="road-description"      ><div class="label-with-icon">      <div>        Legal Description of Road Allowance                      </div>            <div class="info-wrapper">        <div id="info">i</div>        <div class="hide">Insert legal description of road allowance obtained from OSG. At a minimum include, Include the Crown Location or Mining Location Number, Parts and Deposited No. (ex: CL12345, Parts 1-3, 45R99999)           </div>      </div>    </div>      </label    >      <div class="form-group"><div> <label for="legal-description">Crown location/Mining Location:</label>  <input type="text"  id="crown-location-road"/>    </div>    <div>      <label for="legal-description">Parts:</label>      <input type="text" id="parts-road" />    </div>    <div>      <label for="legal-description">Deposited plan number:</label>      <input type="text" id="deposited-road" />    </div>     <div class="flex"> <input type="checkbox" id="other-road" />      <label for="other-road">Other:</label>      <input type="text" id="other-road-text" /></div>  </div>  <div class="line" ></div>  </div>  <div class="form-group">    <label for="road-closure-notice"      >        <div class="label-with-icon"><div>        Has appropriate notice been given to persons who will be affected      by the road closure?    </div><div class="info-wrapper">  <div id="info">i</div>  <div class="hide">Confirm that proper notice has been given. if you enter "no", the requisition package will be  returned to the file lead</div></div></div></label>    <div class="radio-group">      <input        type="radio"        name="road-closure-notice"        id="road-closure-yes"      />      <label for="road-closure-yes">Yes</label>       <input         type="radio"         name="road-closure-notice"         id="road-closure-no"       />       <label for="road-closure-no">No</label>     </div>   </div>   <h3><i>Crown Land Registry Use Only</i></h3>   <div class="bg">   <div >   <div class="form-group">   <label>Approved by Provincial Lands Specialist </label>       </div> <div class="signature"></div><div class="grid col-2 gap"> <div class="form-group">        <label for="date-minister-order">Date: (YEAR/MM/DD)</label>        <input type="text"  id="date-minister-order" />      </div>    <div class="form-group">      <label for="minister-order-number">      <div class="label-with-icon">      <div>                Minister\'s Order Number      </div>                      </div> </label>      <input type="text" id="minister-order-number" /> </div>    <div class="form-group">      <label for="date-minister-order">  <div class="label-with-icon">  <div>        Date: (YEAR/MM/DD)    </div>    <div class="info-wrapper">    <div id="info">i</div>    <div class="hide">    Populated by CLR staff    </div>  </div> </div></label>      <input type="text"  id="date-minister-order" />    </div>    <div class="form-group">      <label for="minister-notes">Notes</label>      <textarea id="minister-notes"></textarea>    </div></div>    </div>'
     );
-    handleTooltip();  ////////////////////
+    handleTooltip(); ////////////////////
   }
   if (sectionName === "subject-of-easement") {
     subjOfEasement.innerHTML =
-      '  <div class="form-group"><div class="label-with-icon"><div>Subject to Easement Must Include the following:</div> <div class="info-wrapper"> <div id="info">i</div> <div class="hide"> If applicable complete the following fields. Also include a copy of the easement in the list of attachments. </div> </div>  </div>    <div class="form-flex">      <div class="">                    <label for="easement-number">Easement Reference Number:</label>          <input type="text" id="easement-number" />      </div>            <div class="">                <label for="grantee">Grantee:</label>          <input type="text" id="grantee" />      </div>       <div class="">         <label for="instrument-number">Instrument Number:</label><input type="text" id="instrument-number" />      </div>      </div>  </div>   <div class="form-group form-flex">                 <div class="form-basis">        <label for="easement-purpose">Purpose:</label>              <textarea id="easement-purpose"></textarea>    </div>    <div class="form-basis">      <label for="legal-description-textarea">Legal Description:</label>      <textarea id="legal-description-textarea"></textarea>    </div> </div><div class="line"></div> <div class="form-flex">  <div class="form-basis">      <label for="special-conditions">  <div class="label-with-icon"><div>Special Conditions:      </div><div class="info-wrapper">  <div id="info">i</div>  <div class="hide">     Insert the type of Special Condition, for example, Municipal Purposes. </div>     </div>   </div> </label>      <textarea id="special-conditions"></textarea>    </div>  </div>    <div style="font-weight: bold; display:grid; place-items:left; margin-bottom: 10px;">            <div class="label-with-icon"> Land Use Codes:  <div class="info-wrapper"> <div id="info">i</div>  <div class="hide">Select the proper code for each of the following: User Class, Land Use Class, Land Use/Purpose, Improvement and Activity. The most popular codes have been listed but should the one you need not be in the populated list, then you will need to go to the "Listings" in LIS. </div></div> </div> </div> <div class="grid col-2 gap">     <div class="form-group"> <label for="land-use-class">User Class:</label>        <select id="land-use-codes">  <option  value="" selected></option> <option value="Commision/Agency">4 Commision/Agency</option><option value="External Government">7 External Government</option><option value="Federal">1 Federal</option><option value="Ministry of natural resources and forestry">5 Ministry of natural resources and forestry</option><option value="Municipal">2 Municipal</option><option value="Other ON Government Ministry">6 Other ON Government Ministry</option><option value="Private Sector">3 Private Sector</option> <option value="Unknown User Class">0 Unknown User Class</option> </select></div> <div class="form-group">   <label for="land-use-class">Land Use Class:</label>        <select id="land-use-class">   <option value="" selected></option>   <option value="Agricultural">1 Agricultural</option>   <option value="Commercial/Industry">3 Commercial/Industry</option>   <option value="Enviroment/Open Space">5 Enviroment/Open Space</option>   <option value="First Nation Reserve">7 First Nation Reserve</option>   <option value="Institutional">4 Institutional</option>   <option value="Recreational">6 Recreational</option>   <option value="Residential">2 Residential</option> <option value="Unknown Land Use Class">0 Unknown Land Use Class</option></select>     </div>      <div class="form-group">      <label for="land-use-Purpose">Land Use Purpose:</label>        <select id="land-use-purpose">  <option value="" selected> </option>  <option value="Accommodation">01 Accommodation</option>  <option value="Communication">13 Communication</option>  <option value="Education">11 Education</option>  <option value="Extraction">05 Extraction</option>  <option value="Harvesting/Growing">07 Harvesting/Growing</option>  <option value="Manufacturing/Processing">06 Manufacturing/Processing</option>  <option value="Protection/Conservation">09 Protection/Conservation</option>  <option value="Recreation">10 Recreation</option>  <option value="Religion">12 Religion</option>  <option value="Service/Retail">03 Service/Retail</option>  <option value="Transportation">04 Transportation</option>  <option value="Utilities">02 Utilities</option>  <option value="Waste Disposal">08 Waste Disposal</option></select></div>      <div class="form-group">      <label for="Improvement">Improvement:</label>        <select id="improvement">    <option value="" selected></option>    <option value="Boathouse">010 Boathouse</option>    <option value="Boathouse, Two storey">139 Boathouse, Two storey</option>    <option value="Boat Launch">063 Boat Launch</option>    <option value="Bridge">011 Bridge</option>    <option value="Cabin">015 Cabin</option>    <option value="Camp, Commercial Outpost">137 Camp, Commercial Outpost</option>    <option value="Camp, Private Recreation">136 Camp, Private Recreation</option>    <option value="Campground">016 Campground</option>    <option value="Cottage">029 Cottage</option>    <option value="Dam">033 Dam</option>    <option value="Dock">036 Dock</option>    <option value="Filed Land">061 Filed Land</option>    <option value="Generating Station, Hydro">081 Generating Station, Hydro</option>    <option value="Lawn">135 Lawn</option>    <option value="Line, Electrical Distribution">088 Line, Electrical Distribution</option>    <option value="Line, Electrical Transmission">099 Line, Electrical Transmission</option>    <option value="Line, Fiber Optic">133 Line, Fiber Optic</option>    <option value="Line, Telecommunication">065 Line, Telecommunication</option>    <option value="Marina">068 Marina</option>    <option value="Mine">071 Mine</option>    <option value="Other">- - - Other</option>    <option value="Pipeline, Natural Gas">079 Pipeline, Natural Gas</option>    <option value="Pipe, Water Intake">059 Pipe, Water Intake</option>    <option value="Road">092 Road</option>    <option value="Sewage Septic Field">134 Sewage Septic Field</option>    <option value="Sewage Septic System">012 Sewage Septic System</option>    <option value="Sewage System Pipe">073 Sewage System Pipe</option>    <option value="Station, Switching">126 Station, Switching</option>    <option value="Tower">111 Tower</option>    <option value="Waste Disposal, Garbage">127 Waste Disposal, Garbage</option> <option value="Unknown Improvement">000 Unknown Improvement</option> </select>   </div>      <div class="form-group">      <label for="activity">Activity:</label>      <select id="activity"> <option value="" selected></option> <option value="Accommodating">001 Accommodating</option> <option value="Communicating">019 Communicating</option> <option value="Disposing">026 Disposing</option> <option value="Extracting">033 Extracting</option> <option value="Generating">041 Generating</option> <option value="Maintaining">054 Maintaining</option> <option value="Manufacturing">055 Manufacturing</option> <option value="Mining">059 Mining</option> <option value="Other">- - - Other</option> <option value="Pumping">072 Pumping</option> <option value="Receiving">075 Receiving</option> <option value="Recreating">076 Recreating</option> <option value="Switching">099 Switching</option> <option value="Transmitting">102 Transmitting</option> <option value="Transporting">103 Transporting</option> <option value="Unknown Activity">000 Unknown Activity</option> </select>  </div>    </div>   <div class="form-group">     <div class="label-with-icon"> <div><h3>Attachment Check List </h3> </div>  <div class="info-wrapper"><div id="info">i</div><div class="hide">Select all boxes that apply to the current disposition of this requisition. </div> </div></div><div class="grid col-2">    <div class="flex">      <div class="checkmark-container">        <input type="checkbox" id="legal-description-schedule" />        <span class="checkmark"></span>      </div>        <label for="legal-description-schedule"        >Legal Description/Schedule</label        >      </div>      <div class="flex">        <div class="checkmark-container">          <input type="checkbox" id="current-pin-instruments" />         <span class="checkmark"></span>       </div>         <label for="current-pin-instruments">Current PIN/Instruments</label>     </div>     <div class="flex">       <div class="checkmark-container">         <input type="checkbox" id="corporate-profile" />         <span class="checkmark"></span>       </div>          <label for="corporate-profile">Corporate Profile</label>      </div>      <div class="flex">        <div class="checkmark-container">          <input type="checkbox" id="oic-briefing-notes" />          <span class="checkmark"></span>       </div>         <label for="oic-briefing-notes">OIC/Briefing Notes</label>     </div>     <div class="flex">       <div class="checkmark-container">         <input type="checkbox" id="lease-cancelled" />         <span class="checkmark"></span>       </div>         <label for="lease-cancelled">Copy of Lease to be Cancelled</label>     </div>       <div class="flex">   <div class="checkmark-container"><input type="checkbox" id="legal-approval" />    <span class="checkmark"></span>  </div>  <label for="legal-approval">Legal Services Approval</label></div> <div class="flex">   <div class="checkmark-container">      <input type="checkbox" id="plan" />      <span class="checkmark"></span>    </div> <label for="plan">Plan</label></div><div class="flex"> <div class="checkmark-container">   <input type="checkbox" id="other" /> <span class="checkmark"></span> </div> <label for="other">Other</label>  <input type="text" id="other-text" /></div></div>  </div>';
-      handleTooltip();  ////////////////////////
-    }
+      '  <div class="form-group"><div class="label-with-icon"><div>Subject to Easement Must Include the following:</div> <div class="info-wrapper"> <div id="info">i</div> <div class="hide"> If applicable complete the following fields. Also include a copy of the easement in the list of attachments. </div> </div>  </div>    <div class="form-flex">      <div class="">                    <label for="easement-number">Easement Reference Number:</label>          <input type="text" id="easement-number" />      </div>            <div class="">                <label for="grantee">Grantee:</label>          <input type="text" id="grantee" />      </div>       <div class="">         <label for="instrument-number">Instrument Number:</label><input type="text" id="instrument-number" />      </div>      </div>  </div>   <div class="form-group form-flex">                 <div class="form-basis">        <label for="easement-purpose">Purpose:</label>              <textarea id="easement-purpose"></textarea>    </div>    <div class="form-basis">      <label for="legal-description-textarea">Legal Description:</label>      <textarea id="legal-description-textarea"></textarea>    </div> </div><div class="line"></div> <div class="form-flex">  <div class="form-basis">      <label for="special-conditions">   ';
+    handleTooltip(); ////////////////////////
+  }
 };
 const unRenderFormSection = function (sectionName) {
   if (sectionName === "B") {
@@ -295,7 +341,7 @@ const renderSection = function (sectionName) {
     sectionC.innerHTML =
       " <h3> Section C: Minister's Order  </h3><div>  Required Supporting Documents </div><ul>  <li>Survey Plan </li><li>Legal Description</li></ul>";
   }
-  handleTooltip();   ///////////////////////////
+  handleTooltip(); ///////////////////////////
 };
 
 form.addEventListener("submit", function (e) {
@@ -373,6 +419,64 @@ form.addEventListener("submit", function (e) {
   ).checked
     ? "Yes"
     : "No";
+  data["Special Conditions"] = capitalizeFirstLetter(
+    document.getElementById("special-conditions").value
+  );
+  data["Improvement"] = document.getElementById("improvement").value;
+  data["Land use-codes"] = document.getElementById("land-use-codes").value;
+  data["Land use purpose"] = document.getElementById("land-use-purpose").value;
+  data["Land use class"] = document.getElementById("land-use-class").value;
+  data["Activity"] = document.getElementById("activity").value;
+  data["Land Use Codes"] = document.getElementById("land-use-code").value;
+  data["Navigability"] = document.getElementById("navigability").checked
+    ? "Yes"
+    : "No";
+
+  data["Guarantee"] = capitalizeFirstLetter(
+    document.getElementById("grantee").value
+  );
+  data["Easement Purpose"] = capitalizeFirstLetter(
+    document.getElementById("easement-purpose").value
+  );
+  data["Instrument Number"] = capitalizeFirstLetter(
+    document.getElementById("instrument-number").value
+  );
+  data["Legal Description 2"] = capitalizeFirstLetter(
+    document.getElementById("legal-description-textarea").value
+  );
+
+  data["Legal Description Schedule"] = document.getElementById(
+    "legal-description-schedule"
+  ).checked
+    ? "Yes"
+    : "No";
+  data["Current PIN Instruments"] = document.getElementById(
+    "current-pin-instruments"
+  ).checked
+    ? "Yes"
+    : "No";
+  data["Corporate Profile"] = document.getElementById("corporate-profile")
+    .checked
+    ? "Yes"
+    : "No";
+  data["OIC Briefing Notes"] = document.getElementById("oic-briefing-notes")
+    .checked
+    ? "Yes"
+    : "No";
+  data["Lease Cancelled"] = document.getElementById("lease-cancelled").checked
+    ? "Yes"
+    : "No";
+  data["Legal Approval"] = document.getElementById("legal-approval").checked
+    ? "Yes"
+    : "No";
+  data["Plan"] = document.getElementById("plan").checked ? "Yes" : "No";
+  data["Other Easement"] = document.getElementById("other").checked
+    ? "Yes"
+    : "No";
+  data["Other Easement Text"] = capitalizeFirstLetter(
+    document.getElementById("other-text").value
+  );
+
   if (document.getElementById("specific-reservations").checked) {
     data["Mine and Minerals"] = document.getElementById("mine-and-minerals")
       .checked
@@ -417,63 +521,6 @@ form.addEventListener("submit", function (e) {
       ? "Yes"
       : "No";
 
-    data["Improvement"] = document.getElementById("improvement").value;
-    data["Land use-codes"] = document.getElementById("land-use-codes").value;
-    data["Land use purpose"] =
-      document.getElementById("land-use-purpose").value;
-    data["Land use class"] = document.getElementById("land-use-class").value;
-    data["Activity"] = document.getElementById("activity").value;
-    data["Land Use Codes"] = document.getElementById("land-use-code").value;
-    data["Navigability"] = document.getElementById("navigability").checked
-      ? "Yes"
-      : "No";
-
-    data["Guarantee"] = capitalizeFirstLetter(
-      document.getElementById("grantee").value
-    );
-    data["Easement Purpose"] = capitalizeFirstLetter(
-      document.getElementById("easement-purpose").value
-    );
-    data["Instrument Number"] = capitalizeFirstLetter(
-      document.getElementById("instrument-number").value
-    );
-    data["Legal Description 2"] = capitalizeFirstLetter(
-      document.getElementById("legal-description-textarea").value
-    );
-    data["Special Conditions"] = capitalizeFirstLetter(
-      document.getElementById("special-conditions").value
-    );
-    data["Legal Description Schedule"] = document.getElementById(
-      "legal-description-schedule"
-    ).checked
-      ? "Yes"
-      : "No";
-    data["Current PIN Instruments"] = document.getElementById(
-      "current-pin-instruments"
-    ).checked
-      ? "Yes"
-      : "No";
-    data["Corporate Profile"] = document.getElementById("corporate-profile")
-      .checked
-      ? "Yes"
-      : "No";
-    data["OIC Briefing Notes"] = document.getElementById("oic-briefing-notes")
-      .checked
-      ? "Yes"
-      : "No";
-    data["Lease Cancelled"] = document.getElementById("lease-cancelled").checked
-      ? "Yes"
-      : "No";
-    data["Legal Approval"] = document.getElementById("legal-approval").checked
-      ? "Yes"
-      : "No";
-    data["Plan"] = document.getElementById("plan").checked ? "Yes" : "No";
-    data["Other Easement"] = document.getElementById("other").checked
-      ? "Yes"
-      : "No";
-    data["Other Easement Text"] = capitalizeFirstLetter(
-      document.getElementById("other-text").value
-    );
     if (document.getElementById("flooding-clause").checked) {
       data["Datum"] = capitalizeFirstLetter(
         document.getElementById("datum").value

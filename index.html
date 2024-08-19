@@ -411,7 +411,7 @@
       </div>
   
           <div class="line"></div>
-          <div class="form-group ">
+          <div class="form-group " id="quit-claim">
             <div class="label-with-icon">
 
               <div>
@@ -427,7 +427,7 @@
               </div> -->
             </div>
            
-            <div class="form-flex">
+            <div class="form-flex" >
                 <div>
   
                     <label for="patent-fee">
@@ -477,55 +477,61 @@
   
           </div>
           <!-- <div class="line"></div> -->
-          <div class="form-group">
-            <div>
-
-            </div>
-            <label for="sale-conditions">
-              
-              <div class="label-with-icon">
-                
-                <div>
-                  Sale with Conditions: Section 15 PLA:
-               
-                </div>
-                
-                <div class="info-wrapper">
-
-                  <div id="info">i</div>
-                  <div class="hide">
-                 
-                    Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.
-
-
-                  </div>
-                </div>
+             <!-- <div class="line"></div> -->
+             <div class="form-group">
+              <div>
+  
               </div>
-            </label>
-            <input type="text" id="sale-conditions" />
-            <div class="form-flex" style="justify-content: normal;">
               
-
-
-              <div class="label-with-icon"> 
-                <label for="conditions-date"> Date by which conditions must be satisfied (YEAR/MM/DD) :</label>                 
-                <div>
+              <label for="sale-conditions">
+                
+                <div class="label-with-icon">
                   
-                </div>         
-                <div class="info-wrapper">
-                  <div id="info">i</div>
-                  <div class="hide">
-                    Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.
+                  <div>
+                    Sale with Conditions: Section 15 PLA:
+                 
+                  </div>
+                  
+                  <div class="info-wrapper">
+  
+                    <div id="info">i</div>
+                    <div class="hide">
+                   
+                      Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.
+  
+  
+                    </div>
                   </div>
                 </div>
+              </label>
+              <input type="text" id="sale-conditions" />
               </div>
-
-
+              <div class="form-flex" style="justify-content: normal;">
                 
-                
-                <input type="text"  id="conditions-date"  />
-              </div>
-          </div>
+  
+  
+                <div class="label-with-icon"> 
+                  <label for="conditions-date"> Date by which conditions must be satisfied (YEAR/MM/DD) :</label>                 
+                  <div>
+                    
+                  </div>         
+                  <div class="info-wrapper">
+                    <div id="info">i</div>
+                    <div class="hide">
+                      Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.
+                    </div>
+                  </div>
+                </div>
+  
+  
+                  
+                  
+                  <input type="text"  id="conditions-date"  />
+                </div>
+            </div>
+  <p>
+    <!-- <hr style="width:100%;text-align:left;margin-left:0"> -->
+  </p>
 <p>
   <!-- <hr style="width:100%;text-align:left;margin-left:0"> -->
 </p>
@@ -627,7 +633,32 @@
           
           </div>
           <div class="line"></div>
-        <span id="subject-of-easement"></span>
+        <span id="subject-of-easement">
+           <div class="label-with-icon"><div>Special Conditions:      </div><div class="info-wrapper">  <div id="info">i</div>  <div class="hide">     Insert the type of Special Condition, for example, Municipal Purposes. </div>     </div>   </div> </label>      <textarea id="special-conditions"></textarea>    </div>  </div>    <div style="font-weight: bold; display:grid; place-items:left; margin-bottom: 10px;">            <div class="label-with-icon"> Land Use Codes:  <div class="info-wrapper"> <div id="info">i</div>  <div class="hide">Select the proper code for each of the following: User Class, Land Use Class, Land Use/Purpose, Improvement and Activity. The most popular codes have been listed but should the one you need not be in the populated list, then you will need to go to the "Listings" in LIS. </div></div> </div> </div> <div class="grid col-2 gap">     <div class="form-group"> <label for="land-use-class">User Class:</label>        <select id="land-use-codes">  <option  value="" selected></option> <option value="Commision/Agency">4 Commision/Agency</option><option value="External Government">7 External Government</option><option value="Federal">1 Federal</option><option value="Ministry of natural resources and forestry">5 Ministry of natural resources and forestry</option><option value="Municipal">2 Municipal</option><option value="Other ON Government Ministry">6 Other ON Government Ministry</option><option value="Private Sector">3 Private Sector</option> <option value="Unknown User Class">0 Unknown User Class</option> </select></div> <div class="form-group">   <label for="land-use-class">Land Use Class:</label>        <select id="land-use-class">   <option value="" selected></option>   <option value="Agricultural">1 Agricultural</option>   <option value="Commercial/Industry">3 Commercial/Industry</option>   <option value="Enviroment/Open Space">5 Enviroment/Open Space</option>   <option value="First Nation Reserve">7 First Nation Reserve</option>   <option value="Institutional">4 Institutional</option>   <option value="Recreational">6 Recreational</option>   <option value="Residential">2 Residential</option> <option value="Unknown Land Use Class">0 Unknown Land Use Class</option></select>     </div>      <div class="form-group">      <label for="land-use-Purpose">Land Use Purpose:</label>        <select id="land-use-purpose">  <option value="" selected> </option>  <option value="Accommodation">01 Accommodation</option>  <option value="Communication">13 Communication</option>  <option value="Education">11 Education</option>  <option value="Extraction">05 Extraction</option>  <option value="Harvesting/Growing">07 Harvesting/Growing</option>  <option value="Manufacturing/Processing">06 Manufacturing/Processing</option>  <option value="Protection/Conservation">09 Protection/Conservation</option>  <option value="Recreation">10 Recreation</option>  <option value="Religion">12 Religion</option>  <option value="Service/Retail">03 Service/Retail</option>  <option value="Transportation">04 Transportation</option>  <option value="Utilities">02 Utilities</option>  <option value="Waste Disposal">08 Waste Disposal</option></select></div>      <div class="form-group">      <label for="Improvement">Improvement:</label>        <select id="improvement">    <option value="" selected></option>    <option value="Boathouse">010 Boathouse</option>    <option value="Boathouse, Two storey">139 Boathouse, Two storey</option>    <option value="Boat Launch">063 Boat Launch</option>    <option value="Bridge">011 Bridge</option>    <option value="Cabin">015 Cabin</option>    <option value="Camp, Commercial Outpost">137 Camp, Commercial Outpost</option>    <option value="Camp, Private Recreation">136 Camp, Private Recreation</option>    <option value="Campground">016 Campground</option>    <option value="Cottage">029 Cottage</option>    <option value="Dam">033 Dam</option>    <option value="Dock">036 Dock</option>    <option value="Filed Land">061 Filed Land</option>    <option value="Generating Station, Hydro">081 Generating Station, Hydro</option>    <option value="Lawn">135 Lawn</option>  
+              <option value="Line, Electrical Distribution">088 Line, Electrical Distribution</option>    <option value="Line, Electrical Transmission">099 Line, Electrical Transmission</option>    <option value="Line, Fiber Optic">133 Line, Fiber Optic</option>  
+                <option value="Line, Telecommunication">065 Line, Telecommunication</option>    <option value="Marina">068 Marina</option>   
+                 <option value="Mine">071 Mine</option>    <option value="Other">- - - Other</option> 
+                    <option value="Pipeline, Natural Gas">079 Pipeline, Natural Gas</option>    <option value="Pipe, Water Intake">059 Pipe, Water Intake</option>    
+                    <option value="Road">092 Road</option>    <option value="Sewage Septic Field">134 Sewage Septic Field</option>    <option value="Sewage Septic System">012 Sewage Septic System</option>    
+                    <option value="Sewage System Pipe">073 Sewage System Pipe</option>    <option value="Station, Switching">126 Station, Switching</option>   
+                     <option value="Tower">111 Tower</option>    <option value="Waste Disposal, Garbage">127 Waste Disposal, Garbage</option> <option value="Unknown Improvement">000 Unknown Improvement</option> </select> 
+                      </div>      <div class="form-group">      <label for="activity">Activity:</label>      <select id="activity"> <option value="" selected></option> <option value="Accommodating">001 Accommodating</option> <option value="Communicating">019 Communicating</option> <option value="Disposing">026 Disposing</option> 
+                        <option value="Extracting">033 Extracting</option> <option value="Generating">041 Generating</option> <option value="Maintaining">054 Maintaining</option> <option value="Manufacturing">055 Manufacturing</option> <option value="Mining">059 Mining</option> <option value="Other">- - - Other</option> <option value="Pumping">072 Pumping</option> <option value="Receiving">075 Receiving</option> <option value="Recreating">076 Recreating</option> <option value="Switching">099 Switching</option> <option value="Transmitting">102 Transmitting</option> <option value="Transporting">103 Transporting</option> 
+                        <option value="Unknown Activity">000 Unknown Activity</option> </select>  </div>    </div>   <div class="form-group">     <div class="label-with-icon"> <div><h3>Attachment Check List </h3> </div>  <div class="info-wrapper"><div id="info">i</div><div class="hide">Select all boxes that apply to the current disposition of this requisition. </div> </div></div><div class="grid col-2">
+                              <div class="flex">      <div class="checkmark-container">        <input type="checkbox" id="legal-description-schedule" />        <span class="checkmark"></span>      </div>        <label for="legal-description-schedule"        >Legal Description/Schedule</label        >      </div>      <div class="flex">        <div class="checkmark-container">      
+                                    <input type="checkbox" id="current-pin-instruments" />         <span class="checkmark"></span>       </div>     
+                                        <label for="current-pin-instruments">Current PIN/Instruments</label>     </div>     <div class="flex">     
+                                            <div class="checkmark-container">         <input type="checkbox" id="corporate-profile" />         <span class="checkmark"></span>    
+                                               </div>          <label for="corporate-profile">Corporate Profile</label>      </div>      <div class="flex">     
+                                                   <div class="checkmark-container">          <input type="checkbox" id="oic-briefing-notes" />          <span class="checkmark"></span>   
+                                                      </div>         <label for="oic-briefing-notes">OIC/Briefing Notes</label>     </div>     <div class="flex">       <div class="checkmark-container">         <input type="checkbox" id="lease-cancelled" />         <span class="checkmark"></span>       </div>     
+                                                          <label for="lease-cancelled">Copy of Lease to be Cancelled</label>     </div>       <div class="flex">   <div class="checkmark-container"><input type="checkbox" id="legal-approval" /> 
+                                                               <span class="checkmark"></span>  </div>  <label for="legal-approval">Legal Services Approval</label></div> <div class="flex">   <div class="checkmark-container">      <input type="checkbox" id="plan" />
+                                                                      <span class="checkmark"></span>    </div> <label for="plan">Plan</label></div><div class="flex"> <div class="checkmark-container"> 
+                                                                          <input type="checkbox" id="other" /> <span class="checkmark"></span> </div> <label for="other">Other</label>
+                                                                        <input type="text" id="other-text" /></div></div>  </div>
+     
+        </span>
           <div class="form-group">
               <h3><i>Crown Land Registry Use Only:</i></h3>
               <div class="bg grid col-2 gap">
@@ -667,28 +698,38 @@
        </div>
        <div id="form-sectionB"></div>
        <div id="form-sectionC"></div>
-       Please review information entered, and ensure it's complete and correct before submitting to Crown Land Registry
+       <label for="requisition">
+        <div class="label-with-icon">
 
-       
-       <div class="btns">
+          <div>
+            Please review information entered, and ensure it's complete and correct before submitting to Crown Land Registry
 
-         <button id="reset" type="reset">Reset</button>
-        <div class="left">
-          <button type="button" id="print">Download</button>
-
+          </div>
           
-         <!-- <button type="submit" class="submit">Download</button> -->
-         <div class="label-with-icon">
-         <div class="info-wrapper">
+          <div class="info-wrapper">
 
-          <div id="info">i</div>
-          <div class="hide">
-            Save PDF document in Legal size format at 85% only from page 2 to 5
+            <div id="info">i</div>
+            <div class="hide">
+              Save PDF document in Legal size format at 85% only from page 2 to 5
+            </div>
           </div>
         </div>
-        </div>
 
-        </div>
+      </label>
+ 
+
+
+<div class="btns">
+  
+  <button id="reset" type="reset">Reset</button>
+  <div class="left">
+    <button type="button" id="print">Print</button>
+
+    
+   <button type="submit" class="submit">Download</button>
+   </div>
+</div>
+        
       </div>
       </form>
     </section>

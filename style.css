@@ -73,11 +73,11 @@ input[type="radio"] {
 
 .line {
   border-bottom: 1px solid #ccc;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .required-docs {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .required-docs ul {
@@ -108,7 +108,7 @@ form {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .form-group label {
@@ -141,7 +141,7 @@ form {
 }
 
 .form-section {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .form-flex {
   display: flex;
@@ -430,5 +430,14 @@ option input:checked + label {
   }
   .bg {
     padding: 5px;
+  }
+}
+
+@media print {
+  .question {
+    display: none;
+  }
+  .doc {
+    display: none;
   }
 }
