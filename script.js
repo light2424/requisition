@@ -388,9 +388,9 @@ form.addEventListener("submit", function (e) {
     document.getElementById("sale-price").value
   );
   
-  //data["Was HST Collected"] = capitalizeFirstLetter(
-  //  document.getElementById("hst-collected").value
-  //);
+  data["Was HST Collected"] = capitalizeFirstLetter(
+    document.getElementById("hst-collected").value
+  );
 
   
   data["HST"] = capitalizeFirstLetter(document.getElementById("hst").value);
@@ -423,8 +423,8 @@ form.addEventListener("submit", function (e) {
     ? "Yes"
     : "No";
   data["Special Conditions"] = capitalizeFirstLetter(
-    //document.getElementById("special-conditions").value;
-    ""
+    document.getElementById("special-conditions").value;
+
   );
   data["Improvement"] = document.getElementById("improvement").value;
   data["Land use-codes"] = document.getElementById("land-use-codes").value;
