@@ -423,7 +423,7 @@ form.addEventListener("submit", function (e) {
     ? "Yes"
     : "No";
   data["Special Conditions"] = capitalizeFirstLetter(
-    //document.getElementById("special-conditions").value
+    //document.getElementById("special-conditions").value;
   );
   data["Improvement"] = document.getElementById("improvement").value;
   data["Land use-codes"] = document.getElementById("land-use-codes").value;
