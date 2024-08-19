@@ -387,9 +387,12 @@ form.addEventListener("submit", function (e) {
   data["Sales Price"] = capitalizeFirstLetter(
     document.getElementById("sale-price").value
   );
-  data["Was HST Collected"] = capitalizeFirstLetter(
-    document.getElementById("hst-collected").value
-  );
+  
+  //data["Was HST Collected"] = capitalizeFirstLetter(
+  //  document.getElementById("hst-collected").value
+  //);
+
+  
   data["HST"] = capitalizeFirstLetter(document.getElementById("hst").value);
   data["Patent Fee"] = capitalizeFirstLetter(
     document.getElementById("patent-fee").value
