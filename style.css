@@ -18,10 +18,11 @@ option {
 h1,
 h3 {
   color: #333;
+  margin-block: 5px;
 }
 
 section {
-  padding: 20px;
+  padding: 10px;
   border-bottom: 1px solid #ccc;
 }
 #section-b,
@@ -46,7 +47,7 @@ li {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form-group label {
@@ -103,7 +104,7 @@ ul.required-docs {
 }
 
 form {
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
 }
 
@@ -440,4 +441,43 @@ option input:checked + label {
   .doc {
     display: none !important;
   }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+td {
+  /* border: 1px solid black; */
+  text-align: left;
+}
+.table-border-right th,
+.table-border-right td {
+  border-right: 1px solid black;
+}
+.table-border-bottom td {
+  border-bottom: 1px solid black;
+}
+.table-border-left td,
+.table-border-left th {
+  border-left: 1px solid black;
+}
+.table-no-border-right td,
+.table-no-border-right th {
+  border-right: 0;
+}
+table input:focus {
+  outline: none;
+}
+th {
+  padding: 5px;
+  /* background-color: #f2f2f2; */
+}
+input[type="text"] {
+  width: 100%;
+  border: none;
+  padding: 8px;
+  box-sizing: border-box;
 }

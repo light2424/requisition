@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./style.css" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     
+    <!-- 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -17,71 +18,7 @@
     <script defer src="script.js"></script>
    
     </script>
-   <style>
-    .form-group {
-    margin-top: 10px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 3fr 1fr;
-    gap: 0;
-    border-bottom: 1px solid black;
-}
-.form-row1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0;
-    border-bottom: 1px solid black;
-
-}
-.form-row2 {
-    display: grid;
-    gap: 0;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-
-}
-
-.form-col {
-    flex: 1;
-    border-right: 1px solid black;
-   padding-left: 2px;
-
-}
-.input {
-  border: none !important; 
-  background-color: #fff !important;
-  padding: 5px !important;
-  margin-bottom: 0 !important; 
-  width: 100%
-}
-.input:focus {
-  outline: none;
-  background-color: aliceblue !important;
-}
-
-.form-col:last-child {
-    margin-right: 0;
-    border-right: none;
-}
-
-.form-col-wide {
-    flex: 3;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="text"]:focus, input[type="email"]:focus {
-    border-color: #000;
-}
    
-</style>
-
   </head>
   <body>
     <section class="question">
@@ -317,7 +254,37 @@ input[type="text"]:focus, input[type="email"]:focus {
           </div>
           <div class="form-group">
             <label >Address:</label>
-          
+            </div>
+            <table>
+              <tr class="table-border-right">
+                  <th>Unit Number</th>
+                  <th>Street Number</th>
+                  <th>Street Name</th>
+                  <th>PO Box</th>
+              </tr>
+              <tr class="table-border-bottom table-border-right">
+                  <td><input id="unit_number"  type="text" name="unit_number"></td>
+                  <td><input id="street_number" type="text" name="street_number"></td>
+                  <td><input id="street_name" type="text" name="street_name"></td>
+                  <td><input id="po_box" type="text" name="po_box"></td>
+              </tr>
+              <tr class="table-border-right">
+                  <th colspan="2">City/Town</th>
+                  <th>Province/Territory</th>
+                  <th colspan="2">Postal Code</th>
+              </tr>
+              <tr class="table-border-bottom table-border-right">
+                  <td colspan="2"><input type="text" id="city" name="city_town"></td>
+                  <td><input type="text" id="province" name="province_territory"></td>
+                  <td colspan="2"><input type="text" id="postal-code" name="postal_code"></td>
+              </tr>
+              <tr class=" table-border-right table-border-left table-no-border-right">
+                  <th colspan="4">Email Address</th>
+              </tr>
+              <tr class="table-border-bottom table-border-right table-border-left table-no-border-right">
+                  <td colspan="4"><input type="text" id="email_address" name="email_address"></td>
+              </tr>
+          </table>
           <!-- <div class="grid col-2 gap">
             <div class="form-group">
               <label for="address">Street:</label>
@@ -336,50 +303,6 @@ input[type="text"]:focus, input[type="email"]:focus {
               <input type="text" id="postal-code" />
             </div>
           </div> -->
-          <div class="form-group">
-        <div class="form-row">
-            <div class="form-col">
-                <label for="unit-number">Unit Number:</label>
-                <input type="text" id="unit-number" name="unit-number" class="input">
-            </div>
-            <div class="form-col">
-                <label for="street-number">Street Number:</label>
-                <input type="text" id="street-number" name="street-number" class="input">
-            </div>
-            <div class="form-col">
-                <label for="street-name">Street Name:</label>
-                <input type="text" id="street-name" name="street-name" class="input">
-            </div>
-            <div class="form-col">
-                <label for="po-box">PO Box:</label>
-                <input type="text" id="po-box" name="po-box" class="input">
-            </div>
-        </div>
-        
-        <div class="form-row1">
-            <div class="form-col">
-                <label for="city-town">City/Town:</label>
-                <input type="text" id="city-town" name="city-town" class="input">
-            </div>
-            <div class="form-col">
-                <label for="province-territory">Province/Territory:</label>
-                <input type="text" id="province-territory" name="province-territory" class="input">
-            </div>
-            <div class="form-col">
-                <label for="postal-code">Postal Code:</label>
-                <input type="text" id="postal-code" name="postal-code" class="input">
-            </div>
-        </div>
-        
-        <div class="form-row2">
-            <div class="form-col-wide">
-                <label for="email-address">Email Address:</label>
-                <input type="email" id="email-address" name="email-address" class="input">
-            </div>
-        </div>
-    </div>
-
-
           <div class="form-group">
             <label for="jurisdiction">
               
@@ -644,6 +567,7 @@ input[type="text"]:focus, input[type="email"]:focus {
 </p>
 
       <div class="form-flex">
+       <div>
         <div class="form-group form-basis" style="align-self: flex-start;">
           <label for="purpose">
             <div class="label-with-icon">
@@ -665,6 +589,42 @@ input[type="text"]:focus, input[type="email"]:focus {
 
           </textarea>
         </div>
+        <div>
+          <div class="form-group checkbox-group">
+            <div class="form-flex">
+              <input type="radio" id="standard" name="specific-and-standard"  />
+
+           
+            <label for="standard" style="margin-bottom: 0;">Standard</label>
+            </div>
+            <div class="form-flex">
+          
+              <input type="radio" id="specific-reservations" name="specific-and-standard"/>
+           
+         
+            <label for="specific-reservations" id="specific-reservations-label" style="margin-bottom: 0;">Specific Reservations
+            </label>
+             
+          </div>
+          
+          
+        </div>
+        <div id="specific-reservations-list">
+         
+        
+        
+        </div>
+        <div class="flex" style="align-items: center;">
+          <div class="checkmark-container">
+              <input type="checkbox" id="Flooding-clause" />
+              <span class="checkmark"></span>
+          </div>
+          <p>
+          <label for="Flooding-clause">Flooding clause</label>
+        </p>
+      </div>
+        </div>
+       </div>
         <div class="form-group">
           <label>
             <div class="label-with-icon">
@@ -700,41 +660,10 @@ input[type="text"]:focus, input[type="email"]:focus {
         
         </div>
       </div>
-          <div class="form-group checkbox-group">
-            <div class="form-flex">
-              <input type="radio" id="standard" name="specific-and-standard"  />
-
-           
-            <label for="standard" style="margin-bottom: 0;">Standard</label>
-            </div>
-            <div class="form-flex">
-          
-              <input type="radio" id="specific-reservations" name="specific-and-standard"/>
-           
-         
-            <label for="specific-reservations" id="specific-reservations-label" style="margin-bottom: 0;">Specific Reservations
-            </label>
-             
-          </div>
-          
-          
-        </div>
-        <div id="specific-reservations-list">
-         
-        
-        
-        </div>
+       
         <div>
         
-          <div class="flex" style="align-items: center;">
-            <div class="checkmark-container">
-                <input type="checkbox" id="Flooding-clause" />
-                <span class="checkmark"></span>
-            </div>
-            <p>
-            <label for="Flooding-clause">Flooding clause</label>
-          </p>
-        </div>
+          
  
           <div id="flooding-div">
           
