@@ -290,7 +290,7 @@ input[type="date"] {
   background-color: green;
 }
 .btns .left button:last-child {
-  background-color: blue;
+  background-color: black;
   margin-left: 10px;
 }
 .multi-select-dropdown {
@@ -438,6 +438,6 @@ option input:checked + label {
     display: none;
   }
   .doc {
-    display: none;
+    display: none !important;
   }
 }

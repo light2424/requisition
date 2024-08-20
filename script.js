@@ -145,11 +145,34 @@ document.getElementById("Flooding-clause").addEventListener("change", (e) => {
 document.getElementById("requisition").addEventListener("change", function (e) {
   if (e.target.value === "Section 15 PLA(Regulated sale)") {
     document.getElementById("quit-claim").innerHTML = "";
-    document.getElementById(
-      "special-conditions"
-    ).innerHTML = `  <label for="sale-conditions">    <div class="label-with-icon">                                <div>                  Sale with Conditions: Section 15 PLA:                               </div>                                <div class="info-wrapper">                  <div id="info">i</div>                  <div class="hide">                                     Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.                  </div> </div>`;
+    document.getElementById("section-15").innerHTML = `        <div>
+  
+              </div>
+              
+              <label for="sale-conditions">
+                
+                <div class="label-with-icon">
+                  
+                  <div>
+                    Sale with Conditions: Section 15 PLA:
+                 
+                  </div>
+                  
+                  <div class="info-wrapper">
+  
+                    <div id="info">i</div>
+                    <div class="hide">
+                   
+                      Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.
+  
+  
+                    </div>
+                  </div>
+                </div>
+              </label>
+              <input type="text" id="sale-conditions" />`;
   } else if (e.target.value === "Section 17 PLA - Quit Claim") {
-    document.getElementById("special-conditions").innerHTML = "";
+    document.getElementById("section-15").innerHTML = "";
     document.getElementById(
       "quit-claim"
     ).innerHTML = `  <div class="label-with-icon">
@@ -186,9 +209,32 @@ document.getElementById("requisition").addEventListener("change", function (e) {
             </div>
             <div class="form-flex"><div>   <label for="patent-fee">    <div class="label-with-icon">            <div>        Administrative fee as per policy PL.6.02.01:              </div>            <div class="info-wrapper">                <div id="info">i</div>        <div class="hide">          populated by district as per PL.6.02.01 Administrative Fees for public land          transactions                  </div>      </div>    </div>  </label>                    <input type="text" step="any" id="patent-fee" />                  </div>                <div >                <label for="market-value"                >                <div class="label-with-icon">                                    <div>                                        Estimated Market Value of Subject property:                  </div>                                    <div class="info-wrapper">                      <div id="info">i</div>                    <div class="hide">                      Value based on benchmarks or zonal reports                    </div>                  </div>                </div>                </label                >                <input type="text" id="market-value" step="any" />              </div></div>`;
 
-    document.getElementById(
-      "special-conditions"
-    ).innerHTML = `  <label for="sale-conditions">    <div class="label-with-icon">                                <div>                  Sale with Conditions: Section 15 PLA:                               </div>                                <div class="info-wrapper">                  <div id="info">i</div>                  <div class="hide">                                     Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.                  </div> </div>`;
+    document.getElementById("section-15").innerHTML = `        <div>
+  
+            </div>
+            
+            <label for="sale-conditions">
+              
+              <div class="label-with-icon">
+                
+                <div>
+                  Sale with Conditions: Section 15 PLA:
+               
+                </div>
+                
+                <div class="info-wrapper">
+
+                  <div id="info">i</div>
+                  <div class="hide">
+                 
+                    Enter the conditions of date that must be satisfied before approval will be granted to issue letters of patent.
+
+
+                  </div>
+                </div>
+              </div>
+            </label>
+            <input type="text" id="sale-conditions" />`;
   }
 });
 
@@ -311,8 +357,10 @@ const renderFormSection = function (sectionName) {
     handleTooltip(); ////////////////////
   }
   if (sectionName === "subject-of-easement") {
-    subjOfEasement.innerHTML =
-      '  <div class="form-group"><div class="label-with-icon"><div>Subject to Easement Must Include the following:</div> <div class="info-wrapper"> <div id="info">i</div> <div class="hide"> If applicable complete the following fields. Also include a copy of the easement in the list of attachments. </div> </div>  </div>    <div class="form-flex">      <div class="">                    <label for="easement-number">Easement Reference Number:</label>          <input type="text" id="easement-number" />      </div>            <div class="">                <label for="grantee">Grantee:</label>          <input type="text" id="grantee" />      </div>       <div class="">         <label for="instrument-number">Instrument Number:</label><input type="text" id="instrument-number" />      </div>      </div>  </div>   <div class="form-group form-flex">                 <div class="form-basis">        <label for="easement-purpose">Purpose:</label>              <textarea id="easement-purpose"></textarea>    </div>    <div class="form-basis">      <label for="legal-description-textarea">Legal Description:</label>      <textarea id="legal-description-textarea"></textarea>    </div> </div><div class="line"></div> <div class="form-flex">  <div class="form-basis">      <label for="special-conditions">   ';
+    subjOfEasement.insertAdjacentHTML(
+      "afterbegin",
+      '  <div class="form-group"><div class="label-with-icon"><div>Subject to Easement Must Include the following:</div> <div class="info-wrapper"> <div id="info">i</div> <div class="hide"> If applicable complete the following fields. Also include a copy of the easement in the list of attachments. </div> </div>  </div>    <div class="form-flex">      <div class="">                    <label for="easement-number">Easement Reference Number:</label>          <input type="text" id="easement-number" />      </div>            <div class="">                <label for="grantee">Grantee:</label>          <input type="text" id="grantee" />      </div>       <div class="">         <label for="instrument-number">Instrument Number:</label><input type="text" id="instrument-number" />      </div>      </div>  </div>   <div class="form-group form-flex">                 <div class="form-basis">        <label for="easement-purpose">Purpose:</label>              <textarea id="easement-purpose"></textarea>    </div>    <div class="form-basis">      <label for="legal-description-textarea">Legal Description:</label>      <textarea id="legal-description-textarea"></textarea>    </div> </div><div class="line"></div> <div class="form-flex">  <div class="form-basis">      <label for="special-conditions">   '
+    );
     handleTooltip(); ////////////////////////
   }
 };
@@ -387,12 +435,9 @@ form.addEventListener("submit", function (e) {
   data["Sales Price"] = capitalizeFirstLetter(
     document.getElementById("sale-price").value
   );
-  
-  data["Was HST Collected"] = capitalizeFirstLetter(
-    document.getElementById("hst-collected").value
-  );
-
-  
+  // data["Was HST Collected"] = capitalizeFirstLetter(
+  //   document.getElementById("hst-collected").value
+  // );
   data["HST"] = capitalizeFirstLetter(document.getElementById("hst").value);
   data["Patent Fee"] = capitalizeFirstLetter(
     document.getElementById("patent-fee").value
@@ -423,64 +468,59 @@ form.addEventListener("submit", function (e) {
     ? "Yes"
     : "No";
   data["Special Conditions"] = capitalizeFirstLetter(
-    document.getElementById("special-conditions").value;
-
+    document.getElementById("special-conditions").value
   );
   data["Improvement"] = document.getElementById("improvement").value;
-  data["Land use-codes"] = document.getElementById("land-use-codes").value;
+  data["Land use codes"] = document.getElementById("land-use-codes").value;
   data["Land use purpose"] = document.getElementById("land-use-purpose").value;
   data["Land use class"] = document.getElementById("land-use-class").value;
   data["Activity"] = document.getElementById("activity").value;
-  data["Land Use Codes"] = document.getElementById("land-use-code").value;
-  data["Navigability"] = document.getElementById("navigability").checked
-    ? "Yes"
-    : "No";
+  if (parcelYes.checked) {
+    data["Guarantee"] = capitalizeFirstLetter(
+      document.getElementById("grantee").value
+    );
+    data["Easement Purpose"] = capitalizeFirstLetter(
+      document.getElementById("easement-purpose").value
+    );
+    data["Instrument Number"] = capitalizeFirstLetter(
+      document.getElementById("instrument-number").value
+    );
+    data["Legal Description 2"] = capitalizeFirstLetter(
+      document.getElementById("legal-description-textarea").value
+    );
 
-  data["Guarantee"] = capitalizeFirstLetter(
-    document.getElementById("grantee").value
-  );
-  data["Easement Purpose"] = capitalizeFirstLetter(
-    document.getElementById("easement-purpose").value
-  );
-  data["Instrument Number"] = capitalizeFirstLetter(
-    document.getElementById("instrument-number").value
-  );
-  data["Legal Description 2"] = capitalizeFirstLetter(
-    document.getElementById("legal-description-textarea").value
-  );
-
-  data["Legal Description Schedule"] = document.getElementById(
-    "legal-description-schedule"
-  ).checked
-    ? "Yes"
-    : "No";
-  data["Current PIN Instruments"] = document.getElementById(
-    "current-pin-instruments"
-  ).checked
-    ? "Yes"
-    : "No";
-  data["Corporate Profile"] = document.getElementById("corporate-profile")
-    .checked
-    ? "Yes"
-    : "No";
-  data["OIC Briefing Notes"] = document.getElementById("oic-briefing-notes")
-    .checked
-    ? "Yes"
-    : "No";
-  data["Lease Cancelled"] = document.getElementById("lease-cancelled").checked
-    ? "Yes"
-    : "No";
-  data["Legal Approval"] = document.getElementById("legal-approval").checked
-    ? "Yes"
-    : "No";
-  data["Plan"] = document.getElementById("plan").checked ? "Yes" : "No";
-  data["Other Easement"] = document.getElementById("other").checked
-    ? "Yes"
-    : "No";
-  data["Other Easement Text"] = capitalizeFirstLetter(
-    document.getElementById("other-text").value
-  );
-
+    data["Legal Description Schedule"] = document.getElementById(
+      "legal-description-schedule"
+    ).checked
+      ? "Yes"
+      : "No";
+    data["Current PIN Instruments"] = document.getElementById(
+      "current-pin-instruments"
+    ).checked
+      ? "Yes"
+      : "No";
+    data["Corporate Profile"] = document.getElementById("corporate-profile")
+      .checked
+      ? "Yes"
+      : "No";
+    data["OIC Briefing Notes"] = document.getElementById("oic-briefing-notes")
+      .checked
+      ? "Yes"
+      : "No";
+    data["Lease Cancelled"] = document.getElementById("lease-cancelled").checked
+      ? "Yes"
+      : "No";
+    data["Legal Approval"] = document.getElementById("legal-approval").checked
+      ? "Yes"
+      : "No";
+    data["Plan"] = document.getElementById("plan").checked ? "Yes" : "No";
+    data["Other Easement"] = document.getElementById("other").checked
+      ? "Yes"
+      : "No";
+    data["Other Easement Text"] = capitalizeFirstLetter(
+      document.getElementById("other-text").value
+    );
+  }
   if (document.getElementById("specific-reservations").checked) {
     data["Mine and Minerals"] = document.getElementById("mine-and-minerals")
       .checked
@@ -538,24 +578,24 @@ form.addEventListener("submit", function (e) {
     );
   }
 
-  data["Document Reference 1"] = capitalizeFirstLetter(
-    document.getElementById("document-reference-1").value
-  );
-  data["Document Reference 2"] = capitalizeFirstLetter(
-    document.getElementById("document-reference-2").value
-  );
-  data["Document Reference 3"] = capitalizeFirstLetter(
-    document.getElementById("document-reference-3").value
-  );
-  data["Date 1"] = capitalizeFirstLetter(
-    document.getElementById("date-1").value
-  );
-  data["Date 2"] = capitalizeFirstLetter(
-    document.getElementById("date-2").value
-  );
-  data["Date 3"] = capitalizeFirstLetter(
-    document.getElementById("date-3").value
-  );
+  // data["Document Reference 1"] = capitalizeFirstLetter(
+  //   document.getElementById("document-reference-1").value
+  // );
+  // data["Document Reference 2"] = capitalizeFirstLetter(
+  //   document.getElementById("document-reference-2").value
+  // );
+  // data["Document Reference 3"] = capitalizeFirstLetter(
+  //   document.getElementById("document-reference-3").value
+  // );
+  // data["Date 1"] = capitalizeFirstLetter(
+  //   document.getElementById("date-1").value
+  // );
+  // data["Date 2"] = capitalizeFirstLetter(
+  //   document.getElementById("date-2").value
+  // );
+  // data["Date 3"] = capitalizeFirstLetter(
+  //   document.getElementById("date-3").value
+  // );
   data["Land File Number"] = capitalizeFirstLetter(
     document.getElementById("land-file-number").value
   );
