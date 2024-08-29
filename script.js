@@ -171,6 +171,7 @@ document.getElementById("requisition").addEventListener("change", function (e) {
                 </div>
               </label>
               <input type="text" id="sale-conditions" />`;
+    handleTooltip();
   } else if (e.target.value === "Section 17 PLA - Quit Claim") {
     document.getElementById("section-15").innerHTML = "";
     document.getElementById(
@@ -190,6 +191,7 @@ document.getElementById("requisition").addEventListener("change", function (e) {
               </div>
             </div>
             <div class="form-flex"><div>   <label for="patent-fee">    <div class="label-with-icon">            <div>        Administrative fee as per policy PL.6.02.01:              </div>            <div class="info-wrapper">                <div id="info">i</div>        <div class="hide">          Populated by district as per PL.6.02.01 Administrative Fees for public land          transactions                  </div>      </div>    </div>  </label>                    <input type="text" step="any" id="patent-fee" />                  </div>                <div >                <label for="market-value"                >                <div class="label-with-icon">                                    <div>                                        Estimated Market Value of Subject property:                  </div>                                    <div class="info-wrapper">                      <div id="info">i</div>                    <div class="hide">                      Value based on benchmarks or zonal reports                    </div>                  </div>                </div>                </label                >                <input type="text" id="market-value" step="any" />              </div></div>`;
+    handleTooltip();
   } else {
     document.getElementById(
       "quit-claim"
@@ -235,6 +237,7 @@ document.getElementById("requisition").addEventListener("change", function (e) {
               </div>
             </label>
             <input type="text" id="sale-conditions" />`;
+    handleTooltip();
   }
 });
 
